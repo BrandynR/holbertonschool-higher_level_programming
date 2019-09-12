@@ -11,11 +11,11 @@ def main():
         b = int(argv[3])
         if argv[2] == "+":
             print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))
-        if argv[2] == "-":
+        elif argv[2] == "-":
             print("{:d} - {:d} = {:d}".format(a, b, sub(a, b)))
-        if argv[2] == "*":
+        elif argv[2] == "*":
             print("{:d} * {:d} = {:d}".format(a, b, mul(a, b)))
-        if argv[2] == "/":
+        elif argv[2] == "/":
             print("{:d} / {:d} = {:d}".format(a, b, div(a, b)))
         else:
             print("Unknown operator. Available operators: +, -, * and /")
