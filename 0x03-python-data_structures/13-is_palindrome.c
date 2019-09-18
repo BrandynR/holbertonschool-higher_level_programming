@@ -1,36 +1,32 @@
 #include "lists.h"
 /**
- * palin_link_check - checks if a linked list is a palindrome
- * @copy: copy of the head
- * @head: head of the linked list
- * Return: 1 if linked list, 0 if not
- */
-int palindrome_link_check(listint_t **copy, listint_t *head)
-{
-	if (head == NULL)
-		return (1);
-
-	if (palin_link_check(copy, head->next) == 1 && (*copy)->n == head->n)
-	{
-		*copy = (*copy)->next;
-		return (1);
-	}
-
-	return (0);
-}
-
-/**
- * is_palindrome - returns 1 if linked list is a palindrome, 0 if not
- * @head: head of the linked list
- * Return: 1 if a linked list palindrome, 0 if not
+ * is_palindrome - finds palindrome in singly linked list
+ * @head: pointer to first node
+ * Return: retunr 1 if palindrome, else 0
  */
 int is_palindrome(listint_t **head)
 {
-	int palindrome;
+	listint_t *temp = *head;
+	int count = 0, len = 0, iter = 0;
+	int buffer[5000];
 
-	if (head == NULL || *head == NULL || (*head)->next == NULL)
+	if (!head || !*head || !temp->next )
 		return (1);
 
-	palindrome = palin_link_check(head, *head);
-	return (palindrome);
+	while (temp)
+	{
+		buffer[count] = temp->n;
+		count++;
+		temp = temp->next;
+	}
+
+	len = count -1;
+	while (iter <= len)
+	{
+		if (buffer[i] != buffer[len])
+			return (0);
+		i++;
+		len--;
+	}
+	return (1);
 }
