@@ -8,9 +8,9 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *temp = *head;
 	int count = 0, len = 0, iter = 0;
-	int buffer[5000];
+	int buffer[9000];
 
-	if (!head || !*head || !temp->next )
+	if (!head || !*head || !temp->next)
 		return (1);
 
 	while (temp)
@@ -20,7 +20,7 @@ int is_palindrome(listint_t **head)
 		temp = temp->next;
 	}
 
-	len = count -1;
+	len = count - 1;
 	while (iter <= len)
 	{
 		if (buffer[i] != buffer[len])
