@@ -1,18 +1,23 @@
 #!/usr/bin/python3
-"""
-text_indentation:
- module that indents text
-"""
+"""Function to format text."""
 
 
 def text_indentation(text):
+    """Will format input text by adding \n.
+    Searches through input string and will add two newlines
+        after the characters '.', '?', and ':'.
+    Args:
+        text (str): input text to be formatted.
+    Raises:
+        TypeError: if input is not a string
     """
-    text_indentation: formats text
-    """
-    if text is None or not isinstance(text, str) or len(text) < 0:
+
+    form = ['.', '?', ':']
+    start = 0
+    if not isinstance(text, str):
         raise TypeError('text must be a string')
-    text = text.replace('.', '.\n\n')
-    text = text.replace('?', '?\n\n')
-    text = text.replace(':', ':\n\n')
-    string = ""
-    print("\n".join([line.strip() for line in text.split("\n")]), end="")
+    for i, x in enumerate(text):
+        if x in form:
+            print(text[start:i + 1].strip() + '\n')
+            start = i + 1
+    print(text[start:].strip(), end='')
