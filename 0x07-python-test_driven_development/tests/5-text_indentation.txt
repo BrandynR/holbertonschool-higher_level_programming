@@ -1,0 +1,37 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("""This is a test. Hooray? Fun tests are neat, and I \
+... love bread: fun stuff.""")
+This is a test.
+<BLANKLINE>
+Hooray?
+<BLANKLINE>
+Fun tests are neat, and I love bread:
+<BLANKLINE>
+fun stuff.
+<BLANKLINE>
+>>> text_indentation("""This is a test. tests are neat, and I \
+... testtestesttesttest""")
+This is a test.
+<BLANKLINE>
+Hooray?
+<BLANKLINE>
+Fun tests are neat, and I love bread:
+<BLANKLINE>
+fun stuff
+>>> text_indentation("""      Here we are testing.If whitespace:is   \
+... working correctly.    There should be no trailing?     Or beginning \
+... whitespaces       """)
+Here we are testing.
+<BLANKLINE>
+If whitespace:
+<BLANKLINE>
+is   working correctly.
+<BLANKLINE>
+There should be no trailing?
+<BLANKLINE>
+Or beginning whitespaces
+>>> a = [1, 2, 3]
+>>> text_indentation(a)
+Traceback (most recent call last):
+TypeError: text must be a string
