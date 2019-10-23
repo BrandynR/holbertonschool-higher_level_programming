@@ -25,17 +25,13 @@ class Base:
 
 @staticmethod
     def draw(list_rectangles, list_squares):
-        """Opens a window and draws a turtle."""
-        colors = ['blue', 'red', 'green', 'purple', 'orange', 'yellow',
-                  'black', 'red', 'purple', 'pink']
+        """Opens a window and draws"""
         window = turtle.Screen()
         window.title("Turtle Square")
         tT = turtle.Turtle()
-        i = 0
         for cls in list_rectangles + list_squares:
-            tT.color(colors[i])
             tT.up()
-            tT.goto(cls.x, cls.y)
+            tT.setpos(cls.x, cls.y)
             tT.down()
             tT.setheading(0)
             tT.forward(cls.width)
@@ -45,7 +41,6 @@ class Base:
             tT.forward(cls.width)
             tT.right(90)
             tT.forward(cls.height)
-            i += 1
 
     @classmethod
     def save_to_file(cls, list_objs):
