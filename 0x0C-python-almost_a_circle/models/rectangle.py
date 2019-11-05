@@ -5,9 +5,7 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """
-    class Rectangle inherits from class Base.
-    """
+    """Test"""
     def errCheck(self, name, value):
         """
         Error checking method that will raise appropriate
