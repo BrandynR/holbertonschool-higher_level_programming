@@ -13,3 +13,5 @@ class TestRectangle(unittest.TestCase):
         result = pep8style.check_files(['models/rectangle.py'])
         self.assertEqual(result.total_errors, 0,
                          "Found code style erros (and warnings).")
+def test_hack(self):
+        self.assertEqual(Base.__doc__, "Test")
