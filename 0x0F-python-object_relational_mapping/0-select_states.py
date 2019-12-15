@@ -14,10 +14,9 @@ db = MySQLdb.connect(
     user=argv[1],
     passwd=argv[2],
     db=argv[3],
-    charset="utf8"
 )
 cursor = db.cursor()
-cursor.execute("SELECT * FROM states".format(database))
+cursor.execute("""SELECT * FROM states ORDER BY states.id ASC;""")
 rows = cursor.fetchall()
 for x in rows:
     print(x)
