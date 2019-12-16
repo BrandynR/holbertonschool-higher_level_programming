@@ -22,6 +22,6 @@ if __name__ == "__main__":
     Session = sessionmaker(engine)
     session = Session()
     row = session.query(City).all()
-    for city in row:
+    for x in row:
         print("{}: {} -> {}".format(city.id, city.name, city.state.name))
     session.close()
