@@ -22,7 +22,7 @@ if __name__ == "__main__":
     Session = sessionmaker(engine)
     session = Session()
     rows = session.query(State).all()
-    for x in row:
+    for state in row:
         print("{}: {}".format(state.id, state.name))
         for city in state.cities:
             print("    {}: {}".format(city.id, city.name))
