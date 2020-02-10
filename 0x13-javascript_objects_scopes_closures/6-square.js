@@ -11,11 +11,11 @@ module.exports = class Square extends square {
       c = 'X';
     }
     let c_wide = '';
+    for (let i = 0; i < this.width; i++) {
+      c_wide += c;
+    }
+
     for (let i = 0; i < this.height; i++) {
-      c_wide = '';
-      for (let j = 0; j < this.width; j++) {
-        c_wide += c;
-      }
       console.log(c_wide);
     }
   }
