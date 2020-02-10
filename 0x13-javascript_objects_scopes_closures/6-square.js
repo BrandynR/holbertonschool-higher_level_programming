@@ -7,16 +7,15 @@ module.exports = class Square extends square {
   }
 
   charPrint (c) {
-    if (c === undefined) {
+    if (typeof c === 'undefined') {
       c = 'X';
     }
-    let c_wide = '';
+    const array = [];
     for (let i = 0; i < this.width; i++) {
-      c_wide += c;
+      array.push(c);
     }
-
     for (let i = 0; i < this.height; i++) {
-      console.log(c_wide);
+      console.log(array.join(''));
     }
   }
 };
