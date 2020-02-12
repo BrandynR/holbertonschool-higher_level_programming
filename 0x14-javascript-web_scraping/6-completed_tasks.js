@@ -9,7 +9,7 @@ request.get(url, (error, response, body) => {
   else {
     for (const key in JSON.parse(body)) {
       let uid = JSON.parse(body)[key]['userId'];
-      if (uid && JSON.parse(body)[key]['completed'] == true) {
+      if (uid && JSON.parse(body)[key]['completed'] === true) {
         if (dict[uid] === undefined) {
           dict[uid] = 1;
         } else {

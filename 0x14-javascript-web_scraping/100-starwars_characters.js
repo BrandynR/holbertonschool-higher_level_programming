@@ -9,7 +9,7 @@ request.get(url, (error, response, body) => {
     for (const key in JSON.parse(body).characters) {
       request.get(JSON.parse(body).characters[key], (error, response, body) => {
         if (error) console.log(error);
-       else console.log(JSON.parse(body).name);
+        else console.log(JSON.parse(body).name);
       });
     }
   }
