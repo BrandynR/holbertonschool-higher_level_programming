@@ -20,7 +20,7 @@ function filmcharacters (film, url) {
         filmcharacters(film, jsonobj.next);
       }
     } else {
-     console.log('An error occured. Status code: ' + response.statusCode);
+      console.log('An error occured. Status code: ' + response.statusCode);
     }
   });
 }
